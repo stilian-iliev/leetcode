@@ -31,9 +31,8 @@ public class LargestTimeFromDigits {
         if (combinations.size() == 2 && combinations.get(0)[0] == combinations.get(1)[0]) {
             combinations.sort((r, l) -> l[1] - r[1]);
         }
-        String hour = combinations.get(0)[0] <10 ? "0" + String.valueOf(combinations.get(0)[0]): String.valueOf(combinations.get(0)[0]);
-        String mins = combinations.get(0)[1] < 10 ? "0" + String.valueOf(combinations.get(0)[1]) : String.valueOf(combinations.get(0)[1]);
-        return hour + ":" + mins;
+
+        return String.format("%02d:%02d%n",combinations.get(0)[0], combinations.get(0)[1]);
     }
 
     public static void main(String[] args) {
